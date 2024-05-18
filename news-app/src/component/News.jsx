@@ -5,10 +5,12 @@ import { Card } from "./style";
 
 const News = () => {
   const [news, setNews] = useState([]);
+  const [date, setDate] = useState(new Date().getDate());
+
   useEffect(() => {
     axios
       .get(
-        "https://newsapi.org/v2/everything?q=Apple&from=2023-03-31&sortBy=popularity&apiKey=8828304fe5be42869fcd970a103ec596"
+        `https://newsapi.org/v2/everything?q=Apple&from=2023-10-03&sortBy=popularity&apiKey=8828304fe5be42869fcd970a103ec596`
       )
       .then((res) => {
         setNews(res.data.articles);
