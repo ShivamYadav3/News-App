@@ -10,7 +10,7 @@ const News = () => {
   useEffect(() => {
     axios
       .get(
-        `https://newsapi.org/v2/everything?q=Apple&from=2023-10-03&sortBy=popularity&apiKey=8828304fe5be42869fcd970a103ec596`
+        `https://newsapi.org/v2/everything?q=Apple&from=2023-10-03&sortBy=popularity&apiKey=${yourKey}`
       )
       .then((res) => {
         setNews(res.data.articles);
